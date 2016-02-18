@@ -1,0 +1,61 @@
+﻿@model Template
+
+@{
+    ViewBag.Title = "Create";
+    var isEdit = ViewBag.IsEdit ?? true;
+    object attr = null;
+    //if (Model != null) {
+    //    attr = new {
+    //        disabled = true
+    //    };
+    //}
+    var datas = PageDatas.GetInstance();
+
+    var langs = Enum.GetNames(typeof(Langs));
+    //var templates = Enum.GetNames(typeof(MsgTypes))
+    //    .ToDictionary(t => t, t => {
+    //        return langs.ToDictionary(l=>l, l=> "");
+    //    });
+}
+
+@if (isEdit) {
+    Html.BeginForm();
+}
+
+<div class="panel panel-default">
+    <div class="panel-body">
+        @Html.DropDownBlockFor(m => m.AppCode, datas.AppCodes(), "col-xs-2", htmlAttributes: attr)
+        @Html.TextBlockFor(m => m.Code, "col-xs-2", htmlAttributes: attr)
+        @Html.EnumDropDownListBlockFor(m => m.Lang, typeof(Langs), "col-xs-2", htmlAttributes: attr)
+        @Html.EnumDropDownListBlockFor(m => m.MsgType, typeof(MsgTypes), "col-xs-2", htmlAttributes: attr)
+        @Html.CheckboxBlockFor(m => m.IsDefault, false, "col-xs-2")
+
+        @Html.TextBlockFor(m => m.Subject, "col-xs-12")
+        @Html.TextareaBlockFor(m => m.Ctx, 20, "col-xs-12")
+    </div>
+    @Html.Partial("CreateModifyInfo")
+    <div class="panel-footer center">
+        <div class="btn-group">
+            @if (isEdit) {
+                <input type="submit" class="btn btn-primary" value="@StaticRes.Save" />
+            }
+            @SharedTemplatesHelper.ReturnToListBtn(this.Url)
+        </div>
+    </div>
+</div>
+
+
+@if (isEdit) {
+    Html.EndForm();
+}
+
+@section scripts{
+    @*@Scripts.Render(BundleConfig.CKEditor)*@
+    <script src="~/ckeditor/ckeditor.js"></script>
+    @Scripts.Render(BundleConfig.Knockout)
+
+        <script>
+            @*var templates = @Html.Raw(JsonConvert.SerializeObject(templates));*@
+            CKEDITOR.replace('Ctx');
+        </script>
+}

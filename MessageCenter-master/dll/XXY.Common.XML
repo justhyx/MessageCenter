@@ -1,0 +1,1605 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>XXY.Common</name>
+    </assembly>
+    <members>
+        <member name="T:XXY.Common.Attributes.AnnoationForAttribute">
+            <summary>
+            Metadata 扩展标记
+            </summary>
+        </member>
+        <member name="M:XXY.Common.Attributes.AnnoationForAttribute.#ctor(System.Type)">
+            <summary>
+            
+            </summary>
+            <param name="type"></param>
+        </member>
+        <member name="P:XXY.Common.Attributes.AnnoationForAttribute.ForType">
+            <summary>
+            应用于哪个类
+            </summary>
+        </member>
+        <member name="T:XXY.Common.Attributes.AutoInjectionAttribute">
+            <summary>
+            Unity 自动注册标识
+            </summary>
+        </member>
+        <member name="M:XXY.Common.Attributes.AutoInjectionAttribute.#ctor(System.Type)">
+            <summary>
+            
+            </summary>
+            <param name="interfaceType"></param>
+        </member>
+        <member name="P:XXY.Common.Attributes.AutoInjectionAttribute.Interface">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:XXY.Common.Attributes.DisableBindingAttribute">
+            <summary>
+            不允许在ＨＴＭＬ中设置加特性的的属性的值，某些值是需要指定式的，不能在ＨＴＭＬ中给它赋值，并提交使用的
+            </summary>
+        </member>
+        <member name="T:XXY.Common.Attributes.MapToAttribute">
+            <summary>
+            用于 BaseQuery
+            </summary>
+        </member>
+        <member name="M:XXY.Common.Attributes.MapToAttribute.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="field"></param>
+        </member>
+        <member name="P:XXY.Common.Attributes.MapToAttribute.Field">
+            <summary>
+            映射到的属性
+            </summary>
+        </member>
+        <member name="P:XXY.Common.Attributes.MapToAttribute.Opt">
+            <summary>
+            比较类型
+            </summary>
+        </member>
+        <member name="P:XXY.Common.Attributes.MapToAttribute.IgnoreCase">
+            <summary>
+            是否忽略大小写
+            </summary>
+        </member>
+        <member name="T:XXY.Common.Attributes.MapToOpts">
+            <summary>
+            比较类型
+            </summary>
+        </member>
+        <member name="F:XXY.Common.Attributes.MapToOpts.Equal">
+            <summary>
+            等于
+            </summary>
+        </member>
+        <member name="F:XXY.Common.Attributes.MapToOpts.NotEqual">
+            <summary>
+            不等于
+            </summary>
+        </member>
+        <member name="F:XXY.Common.Attributes.MapToOpts.Gt">
+            <summary>
+            大于
+            </summary>
+        </member>
+        <member name="F:XXY.Common.Attributes.MapToOpts.GtOrEqual">
+            <summary>
+            大于等于
+            </summary>
+        </member>
+        <member name="F:XXY.Common.Attributes.MapToOpts.Lt">
+            <summary>
+            小于
+            </summary>
+        </member>
+        <member name="F:XXY.Common.Attributes.MapToOpts.LtOrEqual">
+            <summary>
+            小于等
+            </summary>
+        </member>
+        <member name="F:XXY.Common.Attributes.MapToOpts.StartWith">
+            <summary>
+            以 XXX 开始(字符串)
+            </summary>
+        </member>
+        <member name="F:XXY.Common.Attributes.MapToOpts.EndWith">
+            <summary>
+            以XXX结尾(字符串)
+            </summary>
+        </member>
+        <member name="F:XXY.Common.Attributes.MapToOpts.Include">
+            <summary>
+            包含XXX(字符串)
+            </summary>
+        </member>
+        <member name="P:XXY.Common.BaseQuery.AllowPage">
+            <summary>
+            是否分页
+            </summary>
+        </member>
+        <member name="P:XXY.Common.CacheSet.Timeout">
+            <summary>
+            过期时间
+            </summary>
+        </member>
+        <member name="P:XXY.Common.CacheSet.Region">
+            <summary>
+            区域
+            </summary>
+        </member>
+        <member name="P:XXY.Common.CacheSet.NotRemoveable">
+            <summary>
+            不可被移除, true 即指示该项的级别较高,不应该被移除.
+            如果不可被移除, 不需要指定 Timeout
+            </summary>
+        </member>
+        <member name="T:XXY.Common.Attributes.CacheConfigAttribute">
+            <summary>
+            缓存配置标记
+            </summary>
+        </member>
+        <member name="P:XXY.Common.Attributes.CacheConfigAttribute.Region">
+            <summary>
+            区域, 
+            </summary>
+        </member>
+        <member name="P:XXY.Common.Attributes.CacheConfigAttribute.Minute">
+            <summary>
+            过期时长(分钟)
+            </summary>
+        </member>
+        <member name="P:XXY.Common.Attributes.CacheConfigAttribute.NotRemoveable">
+            <summary>
+            是否不可移除
+            </summary>
+        </member>
+        <member name="P:XXY.Common.Attributes.CacheConfigAttribute.Config">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:XXY.Common.ChineseToPinYin">
+            <summary>
+            中文转拼音类
+            </summary>
+        </member>
+        <member name="M:XXY.Common.ChineseToPinYin.ToPinYin(System.String)">
+              <summary>   
+              汉字转拼音   
+              </summary>   
+              <param   name="txt"> 需要转换的汉字 </param>   
+              <returns> 返回汉字对应的拼音 </returns>   
+        </member>
+        <member name="T:XXY.Common.IEnumDescriptionProvider">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:XXY.Common.ICaching">
+            <summary>
+            缓存接口
+            </summary>
+        </member>
+        <member name="M:XXY.Common.ICaching.Get``1(System.String)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.ICaching.Set``1(System.String,``0)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:XXY.Common.ICaching.Set``1(XXY.Common.CacheSet,System.String,``0)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="config"></param>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:XXY.Common.ICaching.Remove(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="key"></param>
+        </member>
+        <member name="T:XXY.Common.LimitedConcurrencyLevelTaskScheduler">
+            <summary> 
+            Provides a task scheduler that ensures a maximum concurrency level while 
+            running on top of the ThreadPool. 
+            http://msdn.microsoft.com/en-us/library/system.threading.tasks.taskscheduler.aspx
+            </summary> 
+        </member>
+        <member name="F:XXY.Common.LimitedConcurrencyLevelTaskScheduler._currentThreadIsProcessingItems">
+            <summary>Whether the current thread is processing work items.</summary>
+        </member>
+        <member name="F:XXY.Common.LimitedConcurrencyLevelTaskScheduler._tasks">
+            <summary>The list of tasks to be executed.</summary> 
+        </member>
+        <member name="F:XXY.Common.LimitedConcurrencyLevelTaskScheduler._maxDegreeOfParallelism">
+            <summary>The maximum concurrency level allowed by this scheduler.</summary> 
+        </member>
+        <member name="F:XXY.Common.LimitedConcurrencyLevelTaskScheduler._delegatesQueuedOrRunning">
+            <summary>Whether the scheduler is currently processing work items.</summary> 
+        </member>
+        <member name="M:XXY.Common.LimitedConcurrencyLevelTaskScheduler.#ctor(System.Int32)">
+            <summary> 
+            Initializes an instance of the LimitedConcurrencyLevelTaskScheduler class with the 
+            specified degree of parallelism. 
+            </summary> 
+            <param name="maxDegreeOfParallelism">The maximum degree of parallelism provided by this scheduler.</param>
+        </member>
+        <member name="M:XXY.Common.LimitedConcurrencyLevelTaskScheduler.QueueTask(System.Threading.Tasks.Task)">
+            <summary>Queues a task to the scheduler.</summary> 
+            <param name="task">The task to be queued.</param>
+        </member>
+        <member name="M:XXY.Common.LimitedConcurrencyLevelTaskScheduler.NotifyThreadPoolOfPendingWork">
+            <summary> 
+            Informs the ThreadPool that there's work to be executed for this scheduler. 
+            </summary> 
+        </member>
+        <member name="M:XXY.Common.LimitedConcurrencyLevelTaskScheduler.TryExecuteTaskInline(System.Threading.Tasks.Task,System.Boolean)">
+            <summary>Attempts to execute the specified task on the current thread.</summary> 
+            <param name="task">The task to be executed.</param>
+            <param name="taskWasPreviouslyQueued"></param>
+            <returns>Whether the task could be executed on the current thread.</returns> 
+        </member>
+        <member name="M:XXY.Common.LimitedConcurrencyLevelTaskScheduler.TryDequeue(System.Threading.Tasks.Task)">
+            <summary>Attempts to remove a previously scheduled task from the scheduler.</summary> 
+            <param name="task">The task to be removed.</param>
+            <returns>Whether the task could be found and removed.</returns> 
+        </member>
+        <member name="M:XXY.Common.LimitedConcurrencyLevelTaskScheduler.GetScheduledTasks">
+            <summary>Gets an enumerable of the tasks currently scheduled on this scheduler.</summary> 
+            <returns>An enumerable of the tasks currently scheduled.</returns> 
+        </member>
+        <member name="P:XXY.Common.LimitedConcurrencyLevelTaskScheduler.MaximumConcurrencyLevel">
+            <summary>Gets the maximum concurrency level supported by this scheduler.</summary> 
+        </member>
+        <member name="T:XXY.Common.Exceptions.InvalidInputException">
+            <summary>
+            无效的输入数据
+            </summary>
+        </member>
+        <member name="M:XXY.Common.Exceptions.InvalidInputException.#ctor(System.String,System.Object[])">
+            <summary>
+            
+            </summary>
+            <param name="msg"></param>
+            <param name="datas"></param>
+        </member>
+        <member name="P:XXY.Common.Exceptions.InvalidInputException.InputData">
+            <summary>
+            数据
+            </summary>
+        </member>
+        <member name="T:XXY.Common.Exceptions.NoPermissionException">
+            <summary>
+            无权限
+            </summary>
+        </member>
+        <member name="T:XXY.Common.Extends.CommonEqualityComparer`2">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="V"></typeparam>
+        </member>
+        <member name="T:XXY.Common.Extends.ConfigurationHelper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XXY.Common.Extends.ConfigurationHelper.GetSection``1">
+            <summary>
+            獲取自訂配置,如果配置不存在,產生實體一個新對配置
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.DateTimeHelper.IsCross(System.DateTime,System.DateTime,System.DateTime,System.DateTime)">
+            <summary>
+            检查两个时间段是否有交叉， 
+            <remarks>第一段 [a , b], 第二段 [c, d]</remarks>
+            </summary>
+            <param name="a"></param>
+            <param name="b"></param>
+            <param name="c"></param>
+            <param name="d"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XXY.Common.Extends.DynamicCopy">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XXY.Common.Extends.DynamicCopy.CopyTo``1(``0,``0)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source"></param>
+            <param name="target"></param>
+        </member>
+        <member name="M:XXY.Common.Extends.DynamicCopy.CopyToOnly``1(``0,``0,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])">
+            <summary>
+            只考贝指定的属性
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source">源</param>
+            <param name="target">目标</param>
+            <param name="only">指定的字段</param>
+        </member>
+        <member name="M:XXY.Common.Extends.DynamicCopy.CopyToExcept``1(``0,``0,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])">
+            <summary>
+            除指定的属性外,全考贝
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source"></param>
+            <param name="target"></param>
+            <param name="only"></param>
+        </member>
+        <member name="M:XXY.Common.Extends.DynamicCopy.SerializeCopy``1(``0)">
+            <summary>
+            序列化考贝
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XXY.Common.Extends.ByteHelper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XXY.Common.Extends.ByteHelper.Bin2Hex(System.Byte[])">
+            <summary>
+            转换为16进制数据
+            </summary>
+            <param name="binary"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XXY.Common.Extends.CollectionHelper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XXY.Common.Extends.CollectionHelper.Get(System.Collections.Specialized.NameValueCollection,System.String,System.String)">
+            <summary>
+            如果沒有找到，返回預設值, 而不是返回null
+            </summary>
+            <param name="coll"></param>
+            <param name="key"></param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.CollectionHelper.Get``2(System.Collections.Generic.IDictionary{``0,``1},``0,``1)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TKey"></typeparam>
+            <typeparam name="TValue"></typeparam>
+            <param name="dic"></param>
+            <param name="key"></param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.CollectionHelper.Get``2(System.Collections.Generic.IDictionary{``0,``1},``0)">
+            <summary>
+            如果没有找到，抛出带键值的异常.
+            </summary>
+            <typeparam name="TKey"></typeparam>
+            <typeparam name="TValue"></typeparam>
+            <param name="dic"></param>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.CollectionHelper.Set``2(System.Collections.Generic.IDictionary{``0,``1},``0,``1)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TKey"></typeparam>
+            <typeparam name="TValue"></typeparam>
+            <param name="dic"></param>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:XXY.Common.Extends.CollectionHelper.Distinct``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="V"></typeparam>
+            <param name="source"></param>
+            <param name="keySelector"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.CollectionHelper.Distinct``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Collections.Generic.IEqualityComparer{``1})">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="V"></typeparam>
+            <param name="source"></param>
+            <param name="keySelector"></param>
+            <param name="comparer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.CollectionHelper.DoPage``1(System.Collections.Generic.IEnumerable{``0},XXY.Common.Pager)">
+            <summary>
+            分页
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source"></param>
+            <param name="pager"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.CollectionHelper.ToDataTable``1(System.Collections.Generic.List{``0})">
+            <summary>
+            将 List 转换为 DataTable, 只针对 T 中 的 public Property
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="list"></param>
+        </member>
+        <member name="M:XXY.Common.Extends.CollectionHelper.MakeList``1(``0)">
+            <summary>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XXY.Common.Extends.EnumHelper">
+            <summary>
+            枚举扩展方法类
+            </summary>
+        </member>
+        <member name="M:XXY.Common.Extends.EnumHelper.GetDescriptions``1">
+            <summary>
+            获取 DescriptionAttribute 中的 Description
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.EnumHelper.GetDescriptions(System.Type)">
+            <summary>
+            获取 DescriptionAttribute 中的 Description
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.EnumHelper.GetDescriptions(System.Object)">
+            <summary>
+            获取 DescriptionAttribute 中的 Description
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.EnumHelper.GetDescription``1(``0)">
+            <summary>
+            获取 DescriptionAttribute 中的 Description
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.EnumHelper.GetDescription(System.Object)">
+            <summary>
+            获取 DescriptionAttribute 中的 Description
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.EnumHelper.GetDescription(System.Enum)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.EnumHelper.GetAttribute``2(``0)">
+            <summary>
+            获取 DescriptionAttribute 中的 Description
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TA"></typeparam>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XXY.Common.Extends.FileHelper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XXY.Common.Extends.FileHelper.GetMIMEType(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="file"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.FileHelper.ReadAllBytes(System.String)">
+            <summary>
+            <remarks>
+            File.ReadAllBytes 在多线程同时读取同一文件的时候，会报 IOException
+            </remarks>
+            </summary>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XXY.Common.Extends.FuncHelper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XXY.Common.Extends.FuncHelper.ToExpression``2(System.Func{``0,``1})">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TResult"></typeparam>
+            <param name="call"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XXY.Common.Extends.NullableHelper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:XXY.Common.Extends.ObjectHelper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XXY.Common.Extends.ObjectHelper.GetDisplayName``1(``0,System.Linq.Expressions.Expression{System.Func{``0,System.Object}},System.String,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj"></param>
+            <param name="exp"></param>
+            <param name="defaultValue"></param>
+            <param name="defaultAsPropertyName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.ObjectHelper.GetDisplayName``1(System.Linq.Expressions.Expression{System.Func{``0,System.Object}},System.String,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="exp"></param>
+            <param name="defaultValue"></param>
+            <param name="defaultAsPropertyName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.ObjectHelper.CopyAttributes(System.Object,System.Object)">
+            <summary>
+            对象属性复制（属性名字一样，直接复制值）
+            </summary>
+            <param name="source">源对象</param>
+            <param name="destobj">目标对象</param>
+        </member>
+        <member name="T:XXY.Common.Extends.StreamHelper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XXY.Common.Extends.StreamHelper.GetBytes(System.IO.Stream,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="stm"></param>
+            <param name="perCount"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.StreamHelper.AsyncGetBytes(System.IO.Stream,System.Action{System.Byte[]},System.Action)">
+            <summary>
+            
+            </summary>
+            <param name="stm"></param>
+            <param name="readCallBack"></param>
+            <param name="complete"></param>
+        </member>
+        <member name="M:XXY.Common.Extends.StreamHelper.ToBase64Url(System.IO.Stream)">
+            <summary>
+            
+            </summary>
+            <param name="stm"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XXY.Common.Extends.StringHelper">
+            <summary>
+            字串擴展類
+            </summary>
+        </member>
+        <member name="M:XXY.Common.Extends.StringHelper.ToInt(System.String,System.Int32)">
+             <summary>
+            
+             </summary>
+             <param name="str"></param>
+             <param name="defaultValue"></param>
+             <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.StringHelper.ToInt(System.String)">
+             <summary>
+            
+             </summary>
+             <param name="str"></param>
+             <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.StringHelper.ToIntOrNull(System.String,System.Nullable{System.Int32})">
+             <summary>
+            
+             </summary>
+             <param name="str"></param>
+             <param name="defaultValue"></param>
+             <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.StringHelper.ToIntOrNull(System.String)">
+             <summary>
+            
+             </summary>
+             <param name="str"></param>
+             <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.StringHelper.SmartToInt(System.String,System.Int32)">
+            <summary>
+            智慧轉換為 Int ，取字串中的第一個數位串
+            </summary>
+            <param name="str"></param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.StringHelper.ToFloat(System.String,System.Single)">
+             <summary>
+            
+             </summary>
+             <param name="str"></param>
+             <param name="defaultValue"></param>
+             <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.StringHelper.ToFloat(System.String)">
+             <summary>
+            
+             </summary>
+             <param name="str"></param>
+             <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.StringHelper.SmartToFloat(System.String,System.Single)">
+            <summary>
+            智慧轉換為 float ，取字串中的第一個數位串
+            可轉換 a1.2, 0.12 1.2aa , 1.2e+7
+            </summary>
+            <param name="str"></param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.StringHelper.ToDecimal(System.String,System.Decimal)">
+             <summary>
+            
+             </summary>
+             <param name="str"></param>
+             <param name="defaultValue"></param>
+             <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.StringHelper.ToDecimal(System.String)">
+             <summary>
+            
+             </summary>
+             <param name="str"></param>
+             <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.StringHelper.ToDecimalOrNull(System.String)">
+             <summary>
+            
+             </summary>
+             <param name="str"></param>
+             <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.StringHelper.SmartToDecimal(System.String,System.Decimal)">
+            <summary>
+            智慧轉換為 float ，取字串中的第一個數位串
+            可轉換 a1.2, 0.12 1.2aa , 1.2e+7
+            </summary>
+            <param name="str"></param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.StringHelper.ToByte(System.String,System.Byte)">
+             <summary>
+            
+             </summary>
+             <param name="str"></param>
+             <param name="defaultValue"></param>
+             <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.StringHelper.ToByte(System.String)">
+             <summary>
+            
+             </summary>
+             <param name="str"></param>
+             <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.StringHelper.ToByteOrNull(System.String,System.Nullable{System.Byte})">
+             <summary>
+            
+             </summary>
+             <param name="str"></param>
+             <param name="defaultValue"></param>
+             <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.StringHelper.ToByteOrNull(System.String)">
+             <summary>
+            
+             </summary>
+             <param name="str"></param>
+             <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.StringHelper.ToLong(System.String,System.Int64)">
+             <summary>
+            
+             </summary>
+             <param name="str"></param>
+             <param name="defaultValue"></param>
+             <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.StringHelper.ToLong(System.String)">
+             <summary>
+            
+             </summary>
+             <param name="str"></param>
+             <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.StringHelper.ToLongOrNull(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.StringHelper.ToUlong(System.String,System.UInt64)">
+             <summary>
+            
+             </summary>
+             <param name="str"></param>
+             <param name="defaultValue"></param>
+             <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.StringHelper.ToUlong(System.String)">
+             <summary>
+            
+             </summary>
+             <param name="str"></param>
+             <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.StringHelper.ToUlongOrNull(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.StringHelper.ToBool(System.String,System.Boolean)">
+             <summary>
+            
+             </summary>
+             <param name="str"></param>
+             <param name="defaultValue"></param>
+             <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.StringHelper.ToBool(System.String)">
+             <summary>
+            
+             </summary>
+             <param name="str"></param>
+             <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.StringHelper.ToBoolOrNull(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.StringHelper.ToDouble(System.String,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="str"></param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.StringHelper.ToDouble(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.StringHelper.ToDoubleOrNull(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.StringHelper.ToEnum``1(System.Int32,``0)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="value"></param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.StringHelper.ToEnum``1(System.Int32)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.StringHelper.ToEnum``1(System.Byte,``0)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="value"></param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.StringHelper.ToEnum``1(System.Byte)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.StringHelper.ToEnum``1(System.String,``0,System.Boolean)">
+             <summary>
+            
+             </summary>
+             <typeparam name="T"></typeparam>
+             <param name="value"></param>
+             <param name="defaultValue"></param>
+             <param name="ignoreCase"></param>
+             <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.StringHelper.ToEnum``1(System.String,``0)">
+             <summary>
+            
+             </summary>
+             <typeparam name="T"></typeparam>
+             <param name="value"></param>
+             <param name="defaultValue"></param>
+             <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.StringHelper.ToEnum``1(System.String)">
+             <summary>
+            
+             </summary>
+             <typeparam name="T"></typeparam>
+             <param name="value"></param>
+             <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.StringHelper.ToEnum``1(System.String,System.Boolean)">
+             <summary>
+            
+             </summary>
+             <typeparam name="T"></typeparam>
+             <param name="value"></param>
+             <param name="ignoreCase"></param>
+             <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.StringHelper.GetEnumValue``1(System.String,System.Int32,System.Boolean)">
+             <summary>
+            
+             </summary>
+             <typeparam name="T"></typeparam>
+             <param name="value"></param>
+             <param name="defaultValue"></param>
+             <param name="ignoreCase"></param>
+             <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.StringHelper.GetEnumValue``1(System.String,System.Int32)">
+             <summary>
+            
+             </summary>
+             <typeparam name="T"></typeparam>
+             <param name="value"></param>
+             <param name="defaultValue"></param>
+             <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.StringHelper.GetEnumValue``1(``0,System.Int32)">
+             <summary>
+            
+             </summary>
+             <typeparam name="T"></typeparam>
+             <param name="value"></param>
+             <param name="defaultValue"></param>
+             <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.StringHelper.GetEnumValue``1(``0)">
+             <summary>
+            
+             </summary>
+             <typeparam name="T"></typeparam>
+             <param name="value"></param>
+             <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.StringHelper.ToIPAddress(System.String)">
+            <summary>
+            如果轉換失敗，返回 IPAddress.None
+            </summary>
+            <param name="ipstring"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.StringHelper.ToDateTimeOrNull(System.String,System.Nullable{System.DateTime})">
+            <summary>
+            轉換為日期，如果轉換失敗，返回預設值
+            </summary>
+            <param name="str"></param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.StringHelper.ToDateTimeOrNull(System.String,System.String,System.Nullable{System.DateTime})">
+            <summary>
+            
+            </summary>
+            <param name="str"></param>
+            <param name="dateFmt"></param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.StringHelper.ToDateTime(System.String,System.DateTime)">
+            <summary>
+            轉換日期，轉換失敗時，返回 defaultValue
+            </summary>
+            <param name="str"></param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.StringHelper.ToDateTime(System.String,System.String,System.DateTime)">
+            <summary>
+            按給定日期格式進行日期轉換
+            </summary>
+            <param name="str"></param>
+            <param name="dateFmt"></param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.StringHelper.ToDateTimeOrNull(System.String)">
+            <summary>
+            轉換為日期，轉換失敗時，返回null
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.StringHelper.ToDateTime(System.String)">
+            <summary>
+            轉換日期，轉換失敗時，返回當前時間
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.StringHelper.IsDateTime(System.String)">
+            <summary>
+            是否為日期型字串
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.StringHelper.ToTimeSpan(System.String,System.TimeSpan)">
+             <summary>
+            
+             </summary>
+             <param name="str"></param>
+             <param name="defaultValue"></param>
+             <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.StringHelper.ToTimeSpan(System.String)">
+             <summary>
+            
+             </summary>
+             <param name="str"></param>
+             <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.StringHelper.ToGuid(System.String)">
+             <summary>
+            
+             </summary>
+             <param name="str"></param>
+             <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.StringHelper.ParseString(System.String,System.String,System.Boolean)">
+            <summary>
+            從 URL 中取出鍵的值, 如果不存在,返回空
+            </summary>
+            <param name="s"></param>
+            <param name="key"></param>
+            <param name="ignoreCase"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.StringHelper.ParseString(System.String,System.Boolean)">
+            <summary>
+            從URL中取 Key / Value
+            </summary>
+            <param name="s"></param>
+            <param name="ignoreCase"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.StringHelper.SetUrlKeyValue(System.String,System.String,System.String,System.Text.Encoding)">
+            <summary>
+            設置 URL中的 key
+            </summary>
+            <param name="url"></param>
+            <param name="key"></param>
+            <param name="value"></param>
+            <param name="encode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.StringHelper.FixUrl(System.String)">
+            <summary>
+            修正URL
+            </summary>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.StringHelper.FixUrl(System.String,System.String)">
+            <summary>
+            修正URL
+            </summary>
+            <param name="url"></param>
+            <param name="defaultPrefix"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.StringHelper.Nvl(System.String,System.String)">
+            <summary>
+            如果 str 是 NullOrWhiteSpace ， 就返回 defaultValue
+            </summary>
+            <param name="str"></param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.StringHelper.JsSafeString(System.String)">
+            <summary>
+            獲取用於 Javascript 的安全字串
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.StringHelper.ClearupSpace(System.String)">
+            <summary>
+            清除两个以上的空格
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.StringHelper.SafeToUpper(System.String)">
+            <summary>
+            安全的转换为大写
+            <remarks>
+            如果直接用 ToUpper , 当为 null 的时候,会报 NullReference
+            </remarks>
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.StringHelper.SafeToLower(System.String)">
+            <summary>
+            安全的转换为小写
+            <remarks>
+            如果直接用 ToUpper , 当为 null 的时候,会报 NullReference
+            </remarks>
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.StringHelper.ObjectToJson``1(``0)">
+            <summary>
+            List对象转化成Json
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="list"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.StringHelper.ListToJson``1(System.Collections.Generic.IList{``0})">
+            <summary>
+            List对象转化成Json
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="list"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.StringHelper.StringFormat(System.String,System.Type)">
+            <summary>
+            格式化字符型、日期型、布尔型
+            </summary>
+            <param name="str"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.StringHelper.String2Json(System.String)">
+            <summary>
+            过滤特殊字符
+            </summary>
+            <param name="s">字符串</param>
+            <returns>json字符串</returns>
+        </member>
+        <member name="T:XXY.Common.Extends.TreeHelper`1">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:XXY.Common.Extends.TreeHelper`1.GetPathFromChild(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{`0,`0}},`0)">
+            <summary>
+            
+            </summary>
+            <param name="kvs"></param>
+            <param name="from"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.TreeHelper`1.FromChildToParent(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{`0,`0}})">
+            <summary>
+            
+            </summary>
+            <param name="kvs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.TreeHelper`1.FromChildToParent(System.Collections.Generic.KeyValuePair{`0,`0}[])">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="kvs">Key : Child, Value : Parent</param>
+            <returns></returns>
+        </member>
+        <member name="T:XXY.Common.Extends.TypeHelper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XXY.Common.Extends.TypeHelper.IsAssignableToGenericType(System.Type,System.Type)">
+            <summary>
+            判断 <paramref name="givenType"/> 是否是泛型 <paramref name="genericType"/>
+            <param name="genericType">泛型类型</param>
+            <param name="givenType">指定类型</param>
+            </summary>
+        </member>
+        <member name="T:XXY.Common.Extends.XElementHelper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XXY.Common.Extends.XElementHelper.GetNamedAttribute(System.Xml.Linq.XElement,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="el"></param>
+            <param name="attrName"></param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="P:XXY.Common.HttpContextHelper.Current">
+            <summary>
+            Access the HttpContext using the Abstractions.
+            </summary>
+        </member>
+        <member name="T:XXY.Common.ILog">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XXY.Common.ILog.Log(System.Exception)">
+            <summary>
+            
+            </summary>
+            <param name="ex"></param>
+        </member>
+        <member name="M:XXY.Common.ILog.Log(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="msg"></param>
+        </member>
+        <member name="M:XXY.Common.ILog.Config">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XXY.Common.ILog.LogSystemLogin(System.String)">
+            <summary>
+            写入登录系统日志
+            </summary>
+            <param name="msg"></param>
+        </member>
+        <member name="M:XXY.Common.ILog.LogModuleVisit(System.String)">
+            <summary>
+            写入模块访问日志
+            </summary>
+            <param name="msg"></param>
+        </member>
+        <member name="M:XXY.Common.ILog.LogOperateExeption(System.String)">
+            <summary>
+            写入操作异常日志
+            </summary>
+            <param name="msg"></param>
+        </member>
+        <member name="M:XXY.Common.ILog.LogBizOperate(System.String)">
+            <summary>
+            写入业务操作日志
+            </summary>
+            <param name="msg"></param>
+        </member>
+        <member name="M:XXY.Common.ILog.LogInterfaceCall(System.String)">
+            <summary>
+            写入接口调用日志
+            </summary>
+            <param name="msg"></param>
+        </member>
+        <member name="M:XXY.Common.ILog.LogNoPower(System.String)">
+            <summary>
+            越权访问日志
+            </summary>
+            <param name="msg"></param>
+        </member>
+        <member name="T:XXY.Common.Net.RequestHelper">
+            <summary>
+            Web 请求扩展
+            </summary>
+        </member>
+        <member name="M:XXY.Common.Net.RequestHelper.#ctor(System.Net.CookieContainer)">
+            <summary>
+            
+            </summary>
+            <param name="container"></param>
+        </member>
+        <member name="M:XXY.Common.Net.RequestHelper.Get(System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            发送GET请求
+            </summary>
+            <param name="url"></param>
+            <param name="datas"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Net.RequestHelper.GetStream(System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            
+            </summary>
+            <param name="url"></param>
+            <param name="datas"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Net.RequestHelper.Post(System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.List{XXY.Common.Net.PostFileItem},System.Byte[],System.String)">
+            <summary>
+            发送POST请求
+            </summary>
+            <param name="url"></param>
+            <param name="datas"></param>
+            <param name="files"></param>
+            <param name="origDatas"></param>
+            <returns></returns>
+        </member>
+        <member name="P:XXY.Common.Net.RequestHelper.CommonHeder">
+            <summary>
+            预设 Request Header
+            </summary>
+        </member>
+        <member name="P:XXY.Common.Net.RequestHelper.Proxy">
+            <summary>
+            代理设置
+            </summary>
+        </member>
+        <member name="P:XXY.Common.Net.RequestHelper.Url">
+            <summary>
+            请求地址
+            </summary>
+        </member>
+        <member name="P:XXY.Common.Net.RequestHelper.ResponseUrl">
+            <summary>
+            最终响应的URL，如果发生 301、302 时，这个值会和请求地址不同
+            </summary>
+        </member>
+        <member name="P:XXY.Common.Net.RequestHelper.Encode">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:XXY.Common.Net.RequestHelper.TimeOut">
+            <summary>
+            超时时长，为0时，不限制超时,单位：毫秒
+            </summary>
+        </member>
+        <member name="P:XXY.Common.Net.RequestHelper.RequestHeader">
+            <summary>
+            请求头
+            </summary>
+        </member>
+        <member name="P:XXY.Common.Net.RequestHelper.CookieContainer">
+            <summary>
+            同一组操作,请使用同一个 CookieContainer
+            <remarks>
+            比如两个不同的用户登陆到某系统,请使用两个 CookieContainer, 
+            不能每次请求都使用一个新的 CookieContainer,这样会导至先前读到的 Cookie 无法应用到新的请求
+            </remarks>
+            </summary>
+        </member>
+        <member name="P:XXY.Common.Net.RequestHelper.ResponseHeaders">
+            <summary>
+            返回的头
+            </summary>
+        </member>
+        <member name="P:XXY.Common.Net.RequestHelper.HttpStatus">
+            <summary>
+            HTTP 状态, 如果发生了跳转, 最终返回的是跳转页的 HttpStatus , 而不会出现 301/302
+            </summary>
+        </member>
+        <member name="P:XXY.Common.Net.RequestHelper.ExceptionStatus">
+            <summary>
+            异常的状态，通常是网络不通等
+            </summary>
+        </member>
+        <member name="T:XXY.Common.Pager">
+            <summary>
+            分页
+            </summary>
+        </member>
+        <member name="P:XXY.Common.Pager.PageSize">
+            <summary>
+            每页数据大小,默认20
+            </summary>
+        </member>
+        <member name="P:XXY.Common.Pager.Page">
+            <summary>
+            第几页
+            </summary>
+        </member>
+        <member name="P:XXY.Common.Pager.Count">
+            <summary>
+            查询结果条数
+            </summary>
+        </member>
+        <member name="M:XXY.Common.Security.AesHelper.Encrypt(System.String)">
+            <summary>
+            AES加密
+            </summary>
+            <param name="input">明文字串</param>
+            <returns>密文</returns>
+        </member>
+        <member name="M:XXY.Common.Security.AesHelper.Encrypt(System.String,System.String)">
+            <summary>
+            AES加密
+            </summary>
+            <param name="input">明文字串</param>
+            <param name="key">金鑰</param>
+            <returns>密文</returns>
+        </member>
+        <member name="M:XXY.Common.Security.AesHelper.Decrypt(System.String)">
+            <summary>
+            AES解密
+            </summary>
+            <param name="input">密文字串</param>
+            <returns>明文</returns>
+        </member>
+        <member name="M:XXY.Common.Security.AesHelper.Decrypt(System.String,System.String)">
+            <summary>
+            AES解密
+            </summary>
+            <param name="input">密文字串</param>
+            <param name="key">金鑰</param>
+            <returns>明文</returns>
+        </member>
+        <member name="M:XXY.Common.Security.AesHelper.Decrypt(System.String,System.String,System.String)">
+            <summary>
+            AES 解密, 如果解密失敗,返回 defaultValue
+            </summary>
+            <param name="input"></param>
+            <param name="key"></param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="P:XXY.Common.Security.AesHelper.Key">
+            <summary>
+            獲取金鑰
+            </summary>
+        </member>
+        <member name="P:XXY.Common.Security.AesHelper.IV">
+            <summary>
+            獲取向量
+            </summary>
+        </member>
+        <member name="M:XXY.Common.Security.DESHelper.Encrypt(System.String)">
+            <summary>
+            DES加密
+            使用此類裡硬編碼的Key及IV
+            </summary>
+            <param name="input">明文字串</param>
+            <returns>密文</returns>
+        </member>
+        <member name="M:XXY.Common.Security.DESHelper.Encrypt(System.String,System.String)">
+            <summary>
+            DES加密
+            </summary>
+            <param name="input">明文字串</param>
+            <param name="key">金鑰</param>
+            <returns>密文</returns>
+        </member>
+        <member name="M:XXY.Common.Security.DESHelper.Encrypt(System.String,System.String,System.String)">
+            <summary>
+            DES加密
+            </summary>
+            <param name="input"></param>
+            <param name="key">金鑰</param>
+            <param name="iv">向量</param>
+            <returns>密文</returns>
+        </member>
+        <member name="M:XXY.Common.Security.DESHelper.Encrypt(System.String,System.Byte[],System.Byte[])">
+            <summary>
+            DES加密
+            </summary>
+            <param name="input"></param>
+            <param name="rgbKey">金鑰</param>
+            <param name="rgbIV">向量</param>
+            <returns>密文</returns>
+        </member>
+        <member name="M:XXY.Common.Security.DESHelper.Decrypt(System.String)">
+            <summary>
+            DES解密
+            使用此類裡硬編碼的Key及IV
+            </summary>
+            <param name="input">密文字串</param>
+            <returns>明文</returns>
+        </member>
+        <member name="M:XXY.Common.Security.DESHelper.Decrypt(System.String,System.String)">
+            <summary>
+            DES解密
+            </summary>
+            <param name="input">密文字串</param>
+            <param name="key">金鑰</param>
+            <returns>明文</returns>
+        </member>
+        <member name="M:XXY.Common.Security.DESHelper.Decrypt(System.String,System.String,System.String)">
+            <summary>
+            DES解密
+            </summary>
+            <param name="input"></param>
+            <param name="key">金鑰</param>
+            <param name="iv">向量</param>
+            <returns>明文</returns>
+        </member>
+        <member name="M:XXY.Common.Security.DESHelper.Decrypt(System.String,System.Byte[],System.Byte[])">
+            <summary>
+            DES解密
+            </summary>
+            <param name="input"></param>
+            <param name="rgbKey">金鑰</param>
+            <param name="rgbIV">向量</param>
+            <returns>明文</returns>
+        </member>
+        <member name="P:XXY.Common.Security.DESHelper.Key">
+            <summary>
+            獲取金鑰
+            </summary>
+        </member>
+        <member name="P:XXY.Common.Security.DESHelper.IV">
+            <summary>
+            獲取向量
+            </summary>
+        </member>
+        <member name="M:XXY.Common.Security.MD5Helper.ToMD5(System.String)">
+            <summary>
+            MD5 32位元加密 加密後密碼為小寫
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XXY.Common.SessionHelper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XXY.Common.SessionHelper.Set``1(``0,System.Object)">
+            <summary>
+            設置 Session
+            </summary>
+            <typeparam name="TSessionKey"></typeparam>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:XXY.Common.SessionHelper.Set(System.String,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:XXY.Common.SessionHelper.Get``2(``0)">
+            <summary>
+            取 Session
+            </summary>
+            <typeparam name="TSessionKey"></typeparam>
+            <typeparam name="TValue"></typeparam>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.SessionHelper.Get``1(System.String)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TValue"></typeparam>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.SessionHelper.Remove``1(``0)">
+            <summary>
+            移除
+            </summary>
+            <typeparam name="TSessionKey"></typeparam>
+            <param name="key"></param>
+        </member>
+        <member name="T:XXY.Common.SessionIDManager">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XXY.Common.SessionIDManager.Initialize">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XXY.Common.SessionIDManager.InitializeRequest(System.Web.HttpContext,System.Boolean,System.Boolean@)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+            <param name="suppressAutoDetectRedirect"></param>
+            <param name="supportSessionIDReissue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.SessionIDManager.GetSessionID(System.Web.HttpContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.SessionIDManager.Validate(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XXY.Common.TypeDescriptors.DisplayPropertyCustomTypeDescriptor">
+            <summary>
+            将复杂类型的属性的属性映射为类型的一个属性
+            <remarks>
+            用于解决 DataGridView 在绑定复杂属性的时候，不能显示的问题
+            </remarks>
+            </summary>
+        </member>
+        <member name="T:XXY.Common.TypeDescriptors.DisplayPropertyTypeDescriptionProvider">
+            <summary>
+            将复杂类型的属性的属性映射为类型的一个属性
+            <remarks>
+            用于解决 DataGridView 在绑定复杂属性的时候，不能显示的问题
+            </remarks>
+            </summary>
+        </member>
+    </members>
+</doc>

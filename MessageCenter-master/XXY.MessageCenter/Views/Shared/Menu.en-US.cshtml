@@ -1,0 +1,62 @@
+﻿@model IEnumerable<MenuItem>
+
+@{
+    Layout = null;
+    MenuItem curr = (MenuItem)TempData["CurrentMenu"];
+
+    var top1 = 0m;
+    var top2 = 0m;
+
+    if (curr != null) {
+        if (curr.ParentWays.Count > 0) {
+            top1 = curr.ParentWays.Last().ModuleID;
+        }
+        if (curr.ParentWays.Count > 1) {
+            top2 = curr.ParentWays.ElementAt(curr.ParentWays.Count - 2).ModuleID;
+        }
+        if (top2 == 0) {
+            top2 = curr.ModuleID;
+        }
+    }
+
+    var lang = "";
+    if (ViewContext.RouteData.Values["lang"] != null) {
+        lang = ViewContext.RouteData.Values["lang"].ToString();
+    }    
+}
+
+<div class="panel-group" id="accordion">
+    @if (Model != null) {
+        foreach (var m in Model.OrderBy(mm => mm.Sequence)) {
+            var actived = top1 == m.ModuleID;
+            var inClass = actived ? "in" : "";
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#menu-@m.ModuleID">
+                            @m.ModuleCode
+                        </a>
+                    </h4>
+                </div>
+                <div id="menu-@m.ModuleID" class="panel-collapse collapse @inClass">
+                    <div class="panel-body">
+                        <ul class="list-unstyled">
+                            @foreach (var sm in m.SubMenus.OrderBy(mmm => mmm.Sequence)) {
+                                var url = string.Format("/{0}{1}", lang, sm.Url);
+                                
+                                <li>
+                                    <a href="@url">@sm.ModuleCode</a>
+                                    @if (top2 == sm.ModuleID) {
+                                        <span class="badge pull-right">H</span>
+                                    }
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        }
+
+    }
+</div>

@@ -1,0 +1,23 @@
+﻿@model TxtMessage
+
+@{
+    ViewBag.Title = "Detail";
+}
+
+
+<div class="panel panel-default">
+
+    <div class="panel-heading">
+        @Model.Subject
+    </div>
+
+    <div class="panel-body">
+        @Model.Ctx
+    </div>
+
+    @Html.Partial("CreateModifyInfo")
+
+    <div class="panel-footer center">
+        @SharedTemplatesHelper.ReturnToListBtn(Url)
+    </div>
+</div>

@@ -1,0 +1,18 @@
+﻿@model HandleErrorInfo
+@{
+    ViewBag.Title = "Exception";
+    var isDebug = System.Diagnostics.Debugger.IsAttached;
+}
+
+<div class="panel panel-danger">
+    <div class="panel-heading">Exception</div>
+
+    <div class="panel-body">
+        @if (isDebug) {
+            <strong>@Model.Exception.Message</strong>
+            <p>@Model.Exception.StackTrace</p>
+        } else {
+            <text>Sorry , service currently not useable, please retry later.</text>
+        }
+    </div>
+</div>

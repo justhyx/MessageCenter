@@ -1,0 +1,78 @@
+﻿@functions{
+
+    public static System.Web.Routing.RouteValueDictionary MargeClass(dynamic viewBag) {
+        System.Web.Routing.RouteValueDictionary htmlAttributes = viewBag.HtmlAttributes ?? new System.Web.Routing.RouteValueDictionary();
+
+        if (htmlAttributes["class"] != null) {
+            htmlAttributes["class"] = string.Format("{0} {1}", htmlAttributes["class"], "form-control input-sm col-lg-2 col-md-2 col-xs-2");
+        } else {
+            htmlAttributes.Add("class", "form-control input-sm");
+        }
+
+        return htmlAttributes;
+    }
+
+
+    public static void MargeClass(dynamic viewBag, System.Web.Routing.RouteValueDictionary attrs) {
+        System.Web.Routing.RouteValueDictionary htmlAttributes = viewBag.HtmlAttributes ?? new System.Web.Routing.RouteValueDictionary();
+
+        if (htmlAttributes["class"] != null) {
+            attrs["class"] = string.Format("{0} {1}", htmlAttributes["class"], "form-control input-sm col-lg-2 col-md-2 col-xs-2");
+        } else {
+            attrs.Add("class", "form-control input-sm");
+        }
+
+        foreach (var kv in htmlAttributes) {
+            if (!attrs.ContainsKey(kv.Key)) {
+                attrs.Add(kv.Key, kv.Value);
+            }
+        }
+    }
+
+}
+
+@helper Star(dynamic viewBag) {
+    if (viewBag.IsRequired) {
+        <span class="red">*</span>
+    }
+}
+
+@helper Label(dynamic viewBag) {
+    string displayName = viewBag.DisplayName;
+    bool withLabel = viewBag.WithLabel ?? true;
+
+    if (withLabel) {
+        <span class="help-block">@displayName @Star(viewBag)</span>
+    }
+}
+
+@helper SelectorBtn(dynamic viewBag, string selector) {
+    string propertyExpression = viewBag.PropertyName;
+
+    <span class="input-group-btn">
+        <button type="button" class="btn btn-default input-sm" data-xxy-selector="@selector" data-xxy-selector-for="@propertyExpression">
+            <span class="glyphicon glyphicon-folder-open"></span>
+        </button>
+    </span>
+
+}
+
+@helper SearchBtnBlock(string className = "col-xs-2") {
+    <div class="@className">
+        <span class="help-block">&nbsp;</span>
+        <input type="submit" class="btn btn-sm btn-primary" id="btn_Search" value="@XXY.MessageCenter.Res.StaticRes.Search" />
+    </div>
+}
+
+@helper ReturnToListBtn(System.Web.Mvc.UrlHelper url, string className = "") {
+    <input type="button" onclick="IndexPageHelper.GoToIndex('@url.Action("Index")')" class="btn btn-default" value="@XXY.MessageCenter.Res.StaticRes.BackToList" />
+}
+
+@helper ReturnToListBtn(System.Web.Mvc.UrlHelper url, string actionName, object routeValues, string className = "")
+{
+    actionName = string.IsNullOrEmpty(actionName) ? "Index" : actionName;
+    routeValues = routeValues ?? new {
+    };
+
+    <input type="button" onclick="IndexPageHelper.GoToIndex('@url.Action(actionName, routeValues )')" class="btn btn-default" value="@XXY.MessageCenter.Res.StaticRes.BackToList" />
+}

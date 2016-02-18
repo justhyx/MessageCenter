@@ -1,0 +1,31 @@
+﻿@model object
+
+@{
+    string propertyExpression = ViewBag.PropertyName;
+    string containerClass = ViewBag.ContainerClass;
+
+    string StartDate = ViewBag.StartDateProperty ?? "StartDate";
+    string EndDate = ViewBag.EndDateProperty ?? "EndDate";
+    //string ShowTitle = ViewBag.ShowTitle ?? "";
+
+    RouteValueDictionary startDateAttributes = new RouteValueDictionary();
+    SharedTemplatesHelper.MargeClass(ViewBag, startDateAttributes);
+    RouteValueDictionary endDateAttributes = new RouteValueDictionary();
+    SharedTemplatesHelper.MargeClass(ViewBag, endDateAttributes);
+    startDateAttributes.Add("style", "width:48%");
+    endDateAttributes.Add("style", "width:48%");
+    
+    bool withLabel = ViewBag.WithLabel ?? true;
+}
+
+<div class="@containerClass">
+    @if (withLabel)
+    {
+        @SharedTemplatesHelper.Label(ViewBag)
+    }
+    <div class="input-group" style="width:100%;">
+        @Html.TextBox(StartDate, null, startDateAttributes)
+        <span style="position:relative;float:left;width:4%;text-align:center;">-</span>
+        @Html.TextBox(EndDate, null, endDateAttributes)
+    </div>
+</div>

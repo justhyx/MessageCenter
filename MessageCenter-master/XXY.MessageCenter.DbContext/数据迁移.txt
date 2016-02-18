@@ -1,0 +1,7 @@
+﻿Enable-Migrations -ProjectName XXY.MessageCenter.DbContext -StartUpProjectName XXY.MessageCenter
+Add-Migration -Name Template -ProjectName XXY.MessageCenter.DbContext -StartUpProjectName XXY.MessageCenter
+Update-Database -ProjectName XXY.MessageCenter.DbContext -StartUpProjectName XXY.MessageCenter -verbose
+
+生成SQL文件 https://msdn.microsoft.com/zh-cn/data/jj591621
+Update-Database -Script -SourceMigration: $InitialDatabase -ProjectName XXY.MessageCenter.DbContext -StartUpProjectName XXY.MessageCenter
+Update-Database -Script -SourceMigration: $InitialDatabase -TargetMigration: AddPostAbstract 

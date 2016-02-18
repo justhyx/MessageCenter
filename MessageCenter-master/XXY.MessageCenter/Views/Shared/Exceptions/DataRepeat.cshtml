@@ -1,0 +1,49 @@
+﻿@model HandleErrorInfo
+
+@functions{
+
+    string GetExpressionText(System.Linq.Expressions.LambdaExpression exp) {
+        var propertyName = "";
+        switch (exp.Body.NodeType) {
+            case System.Linq.Expressions.ExpressionType.MemberAccess:
+                propertyName = (exp.Body as System.Linq.Expressions.MemberExpression).Member.Name;
+                break;
+            case System.Linq.Expressions.ExpressionType.Convert:
+                propertyName = ((exp.Body as System.Linq.Expressions.UnaryExpression).Operand as System.Linq.Expressions.MemberExpression).Member.Name;
+                break;
+            default:
+                propertyName = "";
+                break;
+        }
+
+        return propertyName;
+    }
+
+}
+
+@{
+    ViewBag.Title = "DataRepeat";
+    var ex = (XXY.Common.Exceptions.DataRepeatException)Model.Exception;
+    var data = ex.Entry;
+    var metadata = ModelMetadataProviders.Current.GetMetadataForType(() => data, data.GetType());
+    Dictionary<string, object> dics = new Dictionary<string, object>();
+    foreach (var p in ex.Props) {
+        var name = GetExpressionText(p);//ExpressionHelper.GetExpressionText(p);
+        var prop = metadata.Properties.First(pp => pp.PropertyName.Equals(name));
+        dics.Add(prop.DisplayName ?? prop.PropertyName, prop.Model);
+    }
+}
+
+<div class="panel panel-warning">
+    <div class="panel-heading">数据重复</div>
+    <div class="panel-body">
+        @ex.Message
+        <ul>
+            @foreach (var kv in dics) {
+                <li>@kv.Key : @kv.Value</li>
+            }
+        </ul>
+
+        <input type="button" class="btn btn-default" value="返回上一页" onclick="history.go(-1)" />
+    </div>
+</div>

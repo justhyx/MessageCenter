@@ -1,0 +1,14 @@
+﻿@model object
+@{
+    this.Layout = null;
+    string propertyExpression = ViewBag.PropertyName;
+    string containerClass = ViewBag.ContainerClass;
+    bool defaultChecked = ViewBag.DefaultChecked;
+
+    //RouteValueDictionary htmlAttributes = SharedTemplatesHelper.MargeClass(ViewBag);
+}
+
+<div class="@containerClass">
+    @SharedTemplatesHelper.Label(ViewBag)
+    @Html.CheckBox(propertyExpression, (object)ViewBag.HtmlAttributes)
+</div>

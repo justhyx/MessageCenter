@@ -1,0 +1,37 @@
+﻿@model object
+@{
+    this.Layout = null;
+    string propertyExpression = ViewBag.PropertyName;
+    string containerClass = ViewBag.ContainerClass;
+    bool useKey = ViewBag.UseKey ?? false;
+
+    Type enumType = ViewBag.EnumType;
+    var dict = XXY.Common.Extends.EnumHelper.GetDescriptions(enumType);
+
+    string optionalLabel = ViewBag.OptionalLabel;
+
+    var value = ModelMetadata.FromStringExpression(propertyExpression, ViewData);
+
+
+    var numType = Enum.GetUnderlyingType(enumType);
+    
+        
+    var items = dict.Select(d => new SelectListItem() {
+        Text = d.Value,
+        Value = useKey ? d.Key : Convert.ChangeType(Enum.Parse(enumType, d.Key, true), numType).ToString(),
+        Selected = value != null && value.Model != null ? value.Model.ToString().ToLower() == d.Key.ToString().ToLower() : false
+    }).ToList();
+
+    if (optionalLabel != null) {
+        items.Insert(0, new SelectListItem() {
+            Text = optionalLabel
+        });
+    }
+
+    RouteValueDictionary htmlAttributes = SharedTemplatesHelper.MargeClass(ViewBag);
+}
+
+<div class="@containerClass">
+    @SharedTemplatesHelper.Label(ViewBag)
+    @Html.DropDownList(propertyExpression, items, htmlAttributes)
+</div>

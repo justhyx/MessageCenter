@@ -1,0 +1,63 @@
+﻿@model IEnumerable<MenuItem>
+
+@{
+    Layout = null;
+    MenuItem curr = (MenuItem)TempData["CurrentMenu"];
+
+    decimal? top1 = null;
+    var top2 = 0m;
+
+    if (curr != null) {
+        if (curr.ParentWays.Count > 0) {
+            top1 = curr.ParentWays.Last().ModuleID;
+        }
+        if (curr.ParentWays.Count > 1) {
+            top2 = curr.ParentWays.ElementAt(curr.ParentWays.Count - 2).ModuleID;
+        }
+        if (top2 == 0) {
+            top2 = curr.ModuleID;
+        }
+    }
+
+    if (top1 == null && Model != null) {
+        var m = Model.OrderBy(mm => mm.Sequence).FirstOrDefault();
+        if (m != null) {
+            top1 = m.ModuleID;
+        }
+    }
+
+    var lang = "";
+    if (ViewContext.RouteData.Values["lang"] != null) {
+        lang = ViewContext.RouteData.Values["lang"].ToString();
+    }    
+}
+
+<div role="tabpanel">
+    @if (Model != null) {
+        <ul class="nav nav-tabs" role="tablist">
+            @foreach (var m in Model.OrderBy(mm => mm.Sequence)) {
+                var actived = top1 == m.ModuleID;
+                var inClass = actived ? "active" : "";
+
+                <li role="presentation" class="@inClass">
+                    <a href="#tabMenu-@m.ModuleID" aria-controls="home" role="tab" data-toggle="tab">@m.MenuTitle</a>
+                </li>
+            }
+        </ul>
+
+        <div class="tab-content">
+            @foreach (var m in Model.OrderBy(mm => mm.Sequence)) {
+                var actived = top1 == m.ModuleID;
+                var inClass = actived ? "active" : "";
+
+                <div role="tabpanel" class="tab-pane @inClass" id="tabMenu-@m.ModuleID">
+                    @foreach (var sm in m.SubMenus.OrderBy(mmm => mmm.Sequence)) {
+                        var url = string.Format("/{0}{1}", lang, sm.Url);
+                        var className = top2 == sm.ModuleID ? "curr" : "";
+                        <a href="@url" class="@className">@sm.MenuTitle</a>
+                    }
+                </div>
+            }
+        </div>
+    }
+</div>

@@ -1,0 +1,16 @@
+﻿@model HandleErrorInfo
+
+@{
+    var ex = (XXY.Common.Exceptions.InvalidInputException)Model.Exception;
+}
+
+<div class="panel panel-warning">
+    <div class="panel-heading">
+        无效的数据
+    </div>
+    <div class="panel-body">
+        @ex.Message (Value : @string.Join(", ", ex.InputData))
+        <br />
+        由于指定的数据丢失,或已无效,导至无法使用该数据,请检查相关数据.
+    </div>
+</div>

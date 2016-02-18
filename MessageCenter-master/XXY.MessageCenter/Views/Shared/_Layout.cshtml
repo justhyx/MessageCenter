@@ -1,0 +1,113 @@
+﻿@{
+    Layout = null;
+    string message = (((string)TempData["Message"]) ?? "").JsSafeString();
+    bool callBack = (bool)(TempData["CallBack"] ?? false);
+
+    var lang = "zh-CN";
+    if (ViewContext.RouteData.Values["lang"] != null) {
+        lang = ViewContext.RouteData.Values["lang"].ToString();
+    }
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@StaticRes.AppName</title>
+    @Styles.Render(BundleConfig.Css)
+    @Scripts.Render(BundleConfig.Respond)
+    @Scripts.Render("~/bundles/modernizr")
+
+    @RenderSection("styles", required: false)
+</head>
+<body class="xxy">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                @Html.ActionLink(@StaticRes.AppName, "Index", "Home", new {
+               area = ""
+           }, new {
+               @class = "navbar-brand"
+           })
+
+            </div>
+            @Html.Partial("Message")
+            @Html.Partial("language")
+            @Html.Partial("LoginedUser")
+        </div>
+
+        <div class="topMenu clearfix">
+            @Html.Action("TopMenu", "User", new {
+           area = ""
+       })
+        </div>
+
+
+
+    </div>
+
+    <div class="mainContainer">
+
+        <div class="sidebar">
+            @Html.Action("Menu", "User", new {
+           area = ""
+       })
+
+        </div>
+
+        <div class="mainContent">
+            <ol class="breadcrumb">
+                <li><span class="glyphicon glyphicon-home"></span>&nbsp;</li>
+                @Html.Partial("BreadCrumb")
+            </ol>
+
+            <div class="bodyContainer clearfix">
+                @RenderBody()
+            </div>
+
+            <footer class="docFooter clearfix">
+                <div class="container">
+                    @Html.Partial("Footer")
+                </div>
+            </footer>
+        </div>
+    </div>
+
+
+    <div class="gotop">
+        <a href="javascript:void(0)" onclick="window.scrollTo(0, 0);"><span class="glyphicon glyphicon-circle-arrow-up"></span></a>
+    </div>
+    <div class="sidebarCloser">
+        <a href="javascript:void(0)">
+            <span class="glyphicon glyphicon-transfer"></span>
+        </a>
+    </div>
+    <input type="hidden" id="historyIndex" />
+
+    @*<iframe width="0" height="0" src="@Url.Action("Heart", "Home", new {area = ""})"></iframe>*@
+
+    <script>var GlobalDatas = { RootCompanyID : @(ViewBag.RootCompanyID ?? 0), Lang :'@lang' }</script>
+    @Scripts.Render(string.Format("~/Scripts/Lang.{0}.js", lang))
+    @RenderSection("prescripts", required: false)
+    @Scripts.Render(BundleConfig.Common)
+    @RenderSection("scripts", required: false)
+    <script src="/Msg/hubs"></script>
+    <script src="~/Scripts/Msg.js"></script>
+    @if (!string.IsNullOrWhiteSpace(message)) {
+        <script>
+            $(function(){
+                if(IndexPageHelper.HistorySetted){
+                    if($("#historyIndex").val().split("|")[0] == history.length){
+                        alert("@message");
+                    }
+                }else{
+                    alert("@message");
+                }
+
+            });
+        </script>
+    }
+</body>
+</html>
