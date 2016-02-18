@@ -1,0 +1,31 @@
+﻿@{
+    Layout = null;
+    var controller = this.ViewContext.RouteData.Values["controller"];
+    var action = this.ViewContext.RouteData.Values["action"];
+
+    string key = string.Format("BreadCrumb_{0}_{1}", controller, action);
+    List<string> crumbs = (List<string>)this.TempData[key];
+    if (crumbs != null) {
+        crumbs = crumbs.Distinct().ToList();
+    }
+
+    MenuItem curr = (MenuItem)TempData["CurrentMenu"];
+}
+
+@if (curr != null && curr.ParentWays.Count > 0) {
+    var pw = curr.ParentWays;
+    pw.Reverse();
+    foreach (var p in pw) {
+        <li><span>@p.MenuTitle</span></li>
+    }
+}
+
+@if (curr != null) {
+    <li><span>@curr.MenuTitle</span></li>
+}
+
+@if (crumbs != null && crumbs.Count > 0) {
+    foreach (var b in crumbs) {
+        <li><span>@b</span></li>
+    }
+}

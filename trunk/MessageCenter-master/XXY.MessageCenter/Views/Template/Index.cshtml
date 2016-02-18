@@ -1,0 +1,71 @@
+﻿@model PDM<IEnumerable<Template>, TemplateSearchCondition>
+
+@{
+    ViewBag.Title = "Index";
+    var pdn = new PropertyDisplayName<Template>();
+    var datas = PageDatas.GetInstance();
+}
+
+@using (Html.BeginForm()) {
+
+    <div class="panel panel-default">
+        <div class="panel-heading clearfix">
+            @Html.DropDownBlockFor(m => m.Condition.AppCode, datas.AppCodes(), "col-xs-2", optionalLabel:"")
+            @Html.TextBlockFor(m => m.Condition.Code, "col-xs-2")
+            @Html.EnumDropDownListBlockFor(m => m.Condition.Lang, typeof(Langs), "col-xs-2", optionalLabel: "")
+            @Html.TextBlockFor(m => m.Condition.Subject, "col-xs-2")
+            @SharedTemplatesHelper.SearchBtnBlock()
+        </div>
+
+        <div class="panel-body">
+            <a href="@Url.Action("Create")" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span></a>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>@pdn.Display(p => p.AppCode)</th>
+                        <th>@pdn.Display(p => p.Code)</th>
+                        <th>@pdn.Display(p=>p.MsgType)</th>
+                        <th>@pdn.Display(p => p.Lang)</th>
+                        <th>@pdn.Display(p=>p.IsDefault)</th>
+                        <th>@pdn.Display(p => p.Subject)</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null && Model.Data != null) {
+                        foreach (var m in Model.Data) {
+                            <tr>
+                                <td>@m.AppCode</td>
+                                <td>@m.Code</td>
+                                <td>@m.MsgType</td>
+                                <td>@m.Lang</td>
+                                <td>@m.IsDefault</td>
+                                <td>@m.Subject</td>
+                                <td>
+                                    <div class="btn-group btn-group-sm">
+                                        <a class="btn btn-default" href="@Url.Action("Detail", new {id=m.ID})"><span class="glyphicon glyphicon-list"></span></a>
+                                        <a class="btn btn-default" href="@Url.Action("Edit", new {id=m.ID})"><span class="glyphicon glyphicon-pencil"></span></a>
+                                        <a class="btn btn-default" data-xxy-action="@StaticRes.Delete" href="@Url.Action("Delete", new {id=m.ID})"><span class="glyphicon glyphicon-trash"></span></a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <div class="panel-footer">
+            @if (Model != null) {
+                @Html.Pager(m => m.Condition.Pager)
+            }
+        </div>
+    </div>
+
+}
+
+@section scripts{
+    <script>
+        IndexPageHelper.SetHistory();
+    </script>    
+}

@@ -1,0 +1,3 @@
+﻿XXY.WxApi 依赖 PolicyInjection.
+PolicyInjection 无法使用 Unity > 4.0 的版本, 所以这个项目引用的是
+Unity 3.5 和 Unity.Interception 3.5

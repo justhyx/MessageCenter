@@ -1,0 +1,309 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>XXY.Common.MVC</name>
+    </assembly>
+    <members>
+        <member name="T:XXY.Common.MVC.MutiLangAttribute">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XXY.Common.MVC.ResDataAnnotationsModelMetadataProvider.CreateMetadata(System.Collections.Generic.IEnumerable{System.Attribute},System.Type,System.Func{System.Object},System.Type,System.String)">
+            <summary>
+            重写生成元数据的方法
+            只有页面上来通过Lambda表达式过来的元数据，才进行中英文转换
+            (该过滤为了减少元数据的中英文转换次数)
+            </summary>
+            <param name="attributes"></param>
+            <param name="containerType"></param>
+            <param name="modelAccessor"></param>
+            <param name="modelType"></param>
+            <param name="propertyName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.SelectListItemHelper.GetDropListItems``2(``0)">
+            <summary>
+            下拉框数据生成
+            </summary>
+            <typeparam name="T">数据项</typeparam>
+            <param name="type">头部类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.Extends.SelectListItemHelper.ToEnumDropdownListItems(System.Type,System.Boolean,System.String,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="type"></param>
+            <param name="useKey">是否使用枚举的 Key 来做为下拉列表的 value</param>
+            <param name="optionLabel">如果不为 null ，会在下拉列表中插入一个 text 为该值的选项</param>
+            <param name="optionValue">依赖于 optionLabel</param>
+            <param name="checkedValue">选中的值</param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.MVC.SmartModelBinder.OnModelUpdated(System.Web.Mvc.ControllerContext,System.Web.Mvc.ModelBindingContext)">
+            <summary>
+            
+            </summary>
+            <param name="controllerContext"></param>
+            <param name="bindingContext"></param>
+        </member>
+        <member name="M:XXY.Common.MVC.Helper.Pager``1(System.Web.Mvc.HtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Int32}},System.Int32,System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="helper"></param>
+            <param name="total"></param>
+            <param name="page">从０开始</param>
+            <param name="pageSize"></param>
+            <param name="labelCount"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.MVC.Helper.Pager``1(System.Web.Mvc.HtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,XXY.Common.Pager}},System.Int32)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TModel"></typeparam>
+            <param name="helper"></param>
+            <param name="pagerProperty"></param>
+            <param name="labelCount"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.MVC.Helper.EnumDropDownListBlockFor``2(System.Web.Mvc.HtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Type,System.String,System.Object,System.Boolean,System.Boolean,System.String)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TModel"></typeparam>
+            <typeparam name="TProperty"></typeparam>
+            <param name="helper"></param>
+            <param name="property"></param>
+            <param name="enumType"></param>
+            <param name="containerClass"></param>
+            <param name="htmlAttributes"></param>
+            <param name="useKey">默认为 false, 如果为 True ， 取枚举的 Key 为下拉列表的值</param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.MVC.Helper.DropDownBlockFor``2(System.Web.Mvc.HtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Collections.Generic.IEnumerable{System.Web.Mvc.SelectListItem},System.String,System.Boolean,System.Object,System.String)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TModel"></typeparam>
+            <typeparam name="TProperty"></typeparam>
+            <param name="helper"></param>
+            <param name="property"></param>
+            <param name="listItems"></param>
+            <param name="containerClass"></param>
+            <param name="withLabel"></param>
+            <param name="htmlAttributes"></param>
+            <param name="optionalLabel">可选Option,如果为 null, 不显示</param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.MVC.Helper.ChoiceCustomer``3(System.Web.Mvc.HtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Linq.Expressions.Expression{System.Func{``0,``2}},System.String,System.Object,System.Boolean)">
+            <summary>
+            船公司客户选择器（customer表）
+            </summary>
+            <typeparam name="TModel"></typeparam>
+            <typeparam name="TProperty"></typeparam>
+            <typeparam name="TAssistProperty"></typeparam>
+            <param name="helper"></param>
+            <param name="property"></param>
+            <param name="assistProperty"></param>
+            <param name="containerClass"></param>
+            <param name="htmlAttributes"></param>
+            <param name="withLabel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.MVC.Helper.ChoiceForwarder``3(System.Web.Mvc.HtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Linq.Expressions.Expression{System.Func{``0,``2}},System.String,System.Object,System.Boolean)">
+            <summary>
+            货代选择器（和船公司有业务关联的货代）
+            </summary>
+            <typeparam name="TModel"></typeparam>
+            <typeparam name="TProperty"></typeparam>
+            <typeparam name="TAssistProperty"></typeparam>
+            <param name="helper"></param>
+            <param name="property"></param>
+            <param name="assistProperty"></param>
+            <param name="containerClass"></param>
+            <param name="htmlAttributes"></param>
+            <param name="withLabel"></param>
+            <returns></returns>
+        </member>
+        <member name="P:XXY.Common.MVC.Pagination.CurrPage">
+            <summary>
+            从１开始
+            </summary>
+        </member>
+        <member name="T:XXY.Common.MVC.TransferResult">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XXY.Common.MVC.TransferResult.#ctor(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="url"></param>
+            <param name="method"></param>
+        </member>
+        <member name="M:XXY.Common.MVC.TransferResult.ExecuteResult(System.Web.Mvc.ControllerContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:XXY.Common.MVC.TransferToRouteResult">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XXY.Common.MVC.TransferToRouteResult.#ctor(System.Web.Routing.RouteValueDictionary)">
+            <summary>
+            
+            </summary>
+            <param name="routeValues"></param>
+        </member>
+        <member name="M:XXY.Common.MVC.TransferToRouteResult.#ctor(System.Web.Routing.RouteValueDictionary,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="routeValues"></param>
+            <param name="method"></param>
+        </member>
+        <member name="M:XXY.Common.MVC.TransferToRouteResult.#ctor(System.String,System.Web.Routing.RouteValueDictionary,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="routeName"></param>
+            <param name="routeValues"></param>
+            <param name="method"></param>
+        </member>
+        <member name="M:XXY.Common.MVC.TransferToRouteResult.ExecuteResult(System.Web.Mvc.ControllerContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="P:XXY.Common.MVC.TransferToRouteResult.RouteName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:XXY.Common.MVC.TransferToRouteResult.RouteValues">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:XXY.Common.MVC.Validations.CompareWithAttribute">
+            <summary>
+            比较两个属性的值
+            </summary>
+        </member>
+        <member name="M:XXY.Common.MVC.Validations.CompareWithAttribute.#ctor(System.String,XXY.Common.MVC.Validations.CompareWithOpts)">
+            <summary>
+            
+            </summary>
+            <param name="otherProperty">要参照的属性</param>
+            <param name="opt">比较方法</param>
+        </member>
+        <member name="F:XXY.Common.MVC.Validations.CompareWithOpts.NotEqual">
+            <summary>
+            不等于
+            </summary>
+        </member>
+        <member name="F:XXY.Common.MVC.Validations.CompareWithOpts.Lt">
+            <summary>
+            小于
+            </summary>
+        </member>
+        <member name="F:XXY.Common.MVC.Validations.CompareWithOpts.LtOrEqual">
+            <summary>
+            小于等于
+            </summary>
+        </member>
+        <member name="F:XXY.Common.MVC.Validations.CompareWithOpts.Gt">
+            <summary>
+            大于
+            </summary>
+        </member>
+        <member name="F:XXY.Common.MVC.Validations.CompareWithOpts.GtOrEqual">
+            <summary>
+            大于等于
+            </summary>
+        </member>
+        <member name="T:XXY.Common.MVC.Validations.MDataTypeAttribute">
+            <summary>
+            可指定显示格式的 DataTypeAttribute
+            目前只用来在验证日期时，使用自定义格式
+            </summary>
+        </member>
+        <member name="M:XXY.Common.MVC.Validations.MDataTypeAttribute.#ctor(System.ComponentModel.DataAnnotations.DataType,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="type"></param>
+            <param name="format"></param>
+        </member>
+        <member name="T:XXY.Common.MVC.Validations.RequiredIfAttribute">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XXY.Common.MVC.Validations.RequiredIfAttribute.#ctor(System.String,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="dependentProperty"></param>
+            <param name="targetValue"></param>
+        </member>
+        <member name="M:XXY.Common.MVC.Validations.RequiredIfAttribute.#ctor(System.String,System.Object,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="dependentProperty"></param>
+            <param name="targetValue"></param>
+            <param name="errorMessage"></param>
+        </member>
+        <member name="M:XXY.Common.MVC.Validations.RequiredIfAttribute.#ctor(System.String,System.Object[],System.String)">
+            <summary>
+            
+            </summary>
+            <param name="dependentProperty"></param>
+            <param name="targetValues"></param>
+            <param name="errorMessage"></param>
+        </member>
+        <member name="M:XXY.Common.MVC.Validations.RequiredIfAttribute.GetClientValidationRules(System.Web.Mvc.ModelMetadata,System.Web.Mvc.ControllerContext)">
+            <summary>
+            
+            </summary>
+            <param name="metadata"></param>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.MVC.Validations.RequiredIfAttribute.FormatErrorMessage(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XXY.Common.MVC.Validations.RequiredIfAttribute.IsValid(System.Object,System.ComponentModel.DataAnnotations.ValidationContext)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+            <param name="validationContext"></param>
+            <returns></returns>
+        </member>
+        <member name="P:XXY.Common.MVC.Validations.RequiredIfAttribute.DependentProperty">
+            <summary>
+            依赖于哪个属性
+            <remarks>必须是本对象下的一个属性</remarks>
+            </summary>
+        </member>
+        <member name="P:XXY.Common.MVC.Validations.RequiredIfAttribute.TargetValues">
+            <summary>
+            依赖属性为哪些值时，该属性为必填
+            </summary>
+        </member>
+    </members>
+</doc>

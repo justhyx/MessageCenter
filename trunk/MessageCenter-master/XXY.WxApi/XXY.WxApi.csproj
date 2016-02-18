@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{911A047C-5A2C-4726-B225-77E50240505B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>XXY.WxApi</RootNamespace>
+    <AssemblyName>XXY.WxApi</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.PolicyInjection, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\EnterpriseLibrary.PolicyInjection.6.0.1304.0\lib\NET45\Microsoft.Practices.EnterpriseLibrary.PolicyInjection.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Interception.3.5.1404.0\lib\Net45\Microsoft.Practices.Unity.Interception.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception.Configuration, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Interception.3.5.1404.0\lib\Net45\Microsoft.Practices.Unity.Interception.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="XXY.Common">
+      <HintPath>..\dll\XXY.Common.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApiClient.cs" />
+    <Compile Include="Attributes\MenuTypeAttribute.cs" />
+    <Compile Include="Attributes\EnumParamAttribute.cs" />
+    <Compile Include="Attributes\JsonParamAttribute.cs" />
+    <Compile Include="Attributes\RequestTypeAttribute.cs" />
+    <Compile Include="Attributes\NeedAuthAttribute.cs" />
+    <Compile Include="Attributes\ParamAttribute.cs" />
+    <Compile Include="Attributes\SpecifyValueAttribute.cs" />
+    <Compile Include="Converters\JsonCreationConverter.cs" />
+    <Compile Include="Converters\MenuConverter.cs" />
+    <Compile Include="Converters\SpecifyValueConverter.cs" />
+    <Compile Include="Cryptography.cs" />
+    <Compile Include="Entities\AccessToken.cs" />
+    <Compile Include="Entities\ApiConfig.cs" />
+    <Compile Include="Entities\BaseResult.cs" />
+    <Compile Include="Entities\Menus\ClickButton.cs" />
+    <Compile Include="Entities\Menus\ButtonMenu.cs" />
+    <Compile Include="Entities\Menus\BaseMenu.cs" />
+    <Compile Include="Entities\Menus\MenuButtonTypes.cs" />
+    <Compile Include="Entities\Menus\SubMenus.cs" />
+    <Compile Include="Entities\Menus\ViewButton.cs" />
+    <Compile Include="Entities\Messages\ImageMessage.cs" />
+    <Compile Include="Entities\Messages\Message.cs" />
+    <Compile Include="Entities\Messages\MsgTypes.cs" />
+    <Compile Include="Entities\Messages\MusicMessage.cs" />
+    <Compile Include="Entities\Messages\NewsMessage.cs" />
+    <Compile Include="Entities\Messages\TextMessage.cs" />
+    <Compile Include="Entities\Messages\VideoMessage.cs" />
+    <Compile Include="Entities\Messages\VoiceMessage.cs" />
+    <Compile Include="Entities\Article.cs" />
+    <Compile Include="Entities\Requests\BaseRequest.cs" />
+    <Compile Include="Entities\Requests\ClickRequest.cs" />
+    <Compile Include="Entities\Requests\EventTypes.cs" />
+    <Compile Include="Entities\MenuResult.cs" />
+    <Compile Include="Entities\Requests\EventRequest.cs" />
+    <Compile Include="Entities\Requests\LinkRequest.cs" />
+    <Compile Include="Entities\Requests\RequestTypes.cs" />
+    <Compile Include="Entities\Requests\UnsubscribeRequest.cs" />
+    <Compile Include="Entities\Requests\ViewRequest.cs" />
+    <Compile Include="Entities\Requests\VoiceRequest.cs" />
+    <Compile Include="Entities\Replys\Reply.cs" />
+    <Compile Include="Entities\Requests\SubscribeRequest.cs" />
+    <Compile Include="Entities\Requests\TextRequest.cs" />
+    <Compile Include="Entities\User.cs" />
+    <Compile Include="Handlers\BaseClickHandler.cs" />
+    <Compile Include="Handlers\BaseViewHandler.cs" />
+    <Compile Include="Handlers\BaseVoiceHandler.cs" />
+    <Compile Include="Handlers\BaseLinkHandler.cs" />
+    <Compile Include="Handlers\RequestHandler.cs" />
+    <Compile Include="Handlers\NeedAuthHandler.cs" />
+    <Compile Include="Handlers\BaseSubscribeHandler.cs" />
+    <Compile Include="Handlers\BaseTextHandler.cs" />
+    <Compile Include="Handlers\BaseUnsubscribeHandler.cs" />
+    <Compile Include="Langs.cs" />
+    <Compile Include="RequestDispatcher.cs" />
+    <Compile Include="ClientHelper.cs" />
+    <Compile Include="MethodBase.cs" />
+    <Compile Include="Methods\MenuGet.cs" />
+    <Compile Include="Methods\GetToken.cs" />
+    <Compile Include="Methods\MenuCreate.cs" />
+    <Compile Include="Methods\MenuDelete.cs" />
+    <Compile Include="Methods\MessageSend.cs" />
+    <Compile Include="Methods\UserInfo.cs" />
+    <Compile Include="ParameterHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="HttpMethods.cs" />
+    <Compile Include="Sex.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Handlers\说明.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。启用“NuGet 程序包还原”可下载这些程序包。有关详细信息，请参阅 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

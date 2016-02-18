@@ -1,0 +1,3 @@
+﻿这里的接口处理程序，必须标注：RequestTypeAttribute
+用于注明这个请求程序是处理哪种 Request ， 哪种事件。
+BaseLinkHander 和 BaseViewHandler 虽然都是处理 Url 的， 但是它两个所接收的参数不一样。

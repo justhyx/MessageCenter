@@ -1,0 +1,16 @@
+﻿@model object
+@{
+    this.Layout = null;
+    string propertyExpression = ViewBag.PropertyName;
+    string containerClass = ViewBag.ContainerClass;
+    string displayName = ViewBag.DisplayName;
+    int row = ViewBag.Row;
+
+    RouteValueDictionary htmlAttributes = SharedTemplatesHelper.MargeClass(ViewBag);
+    htmlAttributes.Add("rows", row);
+}
+
+<div class="@containerClass">
+    @SharedTemplatesHelper.Label(ViewBag)
+    @Html.TextArea(propertyExpression, null, htmlAttributes)
+</div>

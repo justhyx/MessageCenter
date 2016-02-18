@@ -1,0 +1,17 @@
+﻿@model BaseEntity
+<table class="table table-bordered">
+    <tr>
+        <td width="50%">
+            @StaticRes.Creator
+            @Html.ValueFor(m => m.CreateByUserName)
+            (ID：@Html.ValueFor(m => m.CreateByUserID) )
+            @Html.ValueFor(m => m.CreateOn)
+        </td>
+        <td>
+            @StaticRes.Modifier
+            @Html.ValueFor(m => m.ModifyByUserName)
+            (ID：@Html.ValueFor(m => m.ModifyByUserID) )
+            @Html.ValueFor(m => m.ModifyOn)
+        </td>
+    </tr>
+</table>

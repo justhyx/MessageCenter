@@ -1,0 +1,19 @@
+﻿@model object
+@using System.Collections
+
+@{
+    this.Layout = null;
+    string propertyExpression = ViewBag.PropertyName;
+    string containerClass = ViewBag.ContainerClass ?? "";
+    IEnumerable<SelectListItem> listItems = (IEnumerable<SelectListItem>)ViewData["DropDownBlock"];
+    if (listItems == null) {
+        listItems = new List<SelectListItem>();
+    }
+
+    RouteValueDictionary htmlAttributes = SharedTemplatesHelper.MargeClass(ViewBag);
+}
+
+<div class="@containerClass">
+    @SharedTemplatesHelper.Label(ViewBag)
+    @Html.DropDownList(propertyExpression, listItems, htmlAttributes)
+</div>

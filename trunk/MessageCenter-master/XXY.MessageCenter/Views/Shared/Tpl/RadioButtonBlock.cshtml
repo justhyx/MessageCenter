@@ -1,0 +1,22 @@
+﻿@model object
+@{
+    this.Layout = null;
+    string propertyExpression = ViewBag.PropertyName;
+    string containerClass = ViewBag.ContainerClass;
+    string displayName = ViewBag.DisplayName;
+    bool checkFlag = (bool)ViewBag.IsCheck;
+
+    RouteValueDictionary htmlAttributes = SharedTemplatesHelper.MargeClass(ViewBag);
+}
+
+@helper Star() {
+    if (ViewBag.IsRequired) {
+        <span class="red">*</span>
+    }
+}
+
+<div class="@containerClass">
+    @SharedTemplatesHelper.Label(ViewBag)
+    @XXY.BK.Res.StaticRes.Yes @Html.RadioButton(propertyExpression, "true", checkFlag, null) &nbsp;
+    @XXY.BK.Res.StaticRes.No @Html.RadioButton(propertyExpression, "false", !checkFlag, null)
+</div>
